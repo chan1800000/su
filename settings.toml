@@ -26,5 +26,5 @@ cnas_out_url = 'http://fpc_backend:8000/'
 host = '127.0.0.1'
 port = 3306
 user = 'root'
-password = 'root'
+password = 'Jug#rjcMs8w'
 db_name = 'su'
