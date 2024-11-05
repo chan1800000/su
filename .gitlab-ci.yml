@@ -1,0 +1,36 @@
+include:
+  - project: "manjusaka/docker_config"
+    ref: main
+    file: "/common/backend.yaml"
+
+variables:
+  COMPOSE_FILE: "docker_config/cnas/dev.yaml"
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+      when: always
+    - if: $CI_COMMIT_TAG
+      when: always
+
+stages:
+  - build_image
+  - deploy_backend
+  - build_tag_image
+
+build_image:
+  script:
+    - docker compose -f ${COMPOSE_FILE} build pm_backend
+    - docker image prune -f
+
+deploy_backend:
+  script:
+    - docker compose -f ${COMPOSE_FILE} down pm_backend
+    - docker compose -f ${COMPOSE_FILE} up pm_backend -d
+
+build_tag_image:
+  script:
+    - export VERSION=${CI_COMMIT_TAG}
+    - docker compose -f ${COMPOSE_FILE} build pm_backend
+    - docker compose -f ${COMPOSE_FILE} push pm_backend -q
+    - docker image prune -f

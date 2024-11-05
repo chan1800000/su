@@ -1,0 +1,3 @@
+[submodule "docker_config"]
+	path = docker_config
+	url = ssh://git@222.128.10.254:20022/manjusaka/docker_config.git

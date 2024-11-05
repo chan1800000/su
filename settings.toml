@@ -1,0 +1,30 @@
+[GLOABLE]
+system_info = 'Linux'
+
+[Linux]
+save_path = '../project_data/mapping/'
+user_info_path = '../project_data/mapping/user_info'
+medical_examination_path = '../project_data/mapping/medical_examination_info'
+refresher_certificate_path = '../project_data/mapping/refresher_certificate_info'
+patent_path = '../project_data/mapping/patent_info'
+education_path = '../project_data/mapping/education_info'
+work_record_path = '../project_data/mapping/work_record_info'
+accident_risk_path = '../project_data/mapping/accident_risk_info'
+train_path = '../project_data/mapping/train_info'
+logging_path = 'logs'
+re_num = 'DPBLK-JH-001'
+re_num1 = 'DPBLK-JH-002'
+re_num2 = 'DPBLK-JL-GL-033'
+ver = '2024/v1.0'
+
+fileurl = '/files/'
+pacsurl = 'http://192.168.0.137:8001/pathology/DownLoadImageSVS/?F_username=admin&F_pwd=e10adc3949ba59abbe56e057f20f883e&F_img_id='
+
+cnas_out_url = 'http://fpc_backend:8000/'
+
+[cnas_db]
+host = '127.0.0.1'
+port = 3306
+user = 'root'
+password = 'root'
+db_name = 'su'
